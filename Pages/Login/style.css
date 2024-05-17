@@ -6,32 +6,19 @@
   display: flex;
   justify-content: center;
   width: 700px;
-  height: 700px;
+  height: fit-content;
   background: #5882c147;
   border-radius: 40px;
   margin-top: 25px;
   margin-left: auto;
   margin-right: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
   padding-top: 48px;
   padding-left: 96px;
   padding-right: 61px;
-  padding-bottom: 47px;
 }
-.box-2{
-    display: flex;
-  justify-content: center;
-  width: 720px;
-  height: 720px;
-  background: #5882c147;
-  border-radius: 40px;
-  margin-top: 25px;
-  margin-left: auto;
-  margin-right: auto;
-  padding-top: 48px;
-  padding-left: 96px;
-  padding-right: 61px;
-  padding-bottom: 47px;
-}
+
 .logo {
   display: flex;
   flex-direction: column;
