@@ -6,7 +6,8 @@ import { Link } from "react-router-dom";
 function SignUp() {
   const [userInput, setUserInput] = useState({
     name: "",
-    phone: "",
+    surname: "",
+    age: "",
     email: "",
     password: "",
   });
@@ -16,13 +17,16 @@ function SignUp() {
   function validateInput() {
     const errors = {};
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    const phonePattern = /^\+998\d{9}$/;
 
     if (!userInput.name.trim()) {
       errors.name = "Ism kerak";
     }
-    if (!phonePattern.test(userInput.phone)) {
-      errors.phone = "Telefon raqami formati noto'g'ri";
+    if (!userInput.surname.trim()) {
+      errors.username = "Foydalanuvchi nomi kerak";
+    }
+    const age = parseInt(userInput.age, 10);
+    if (isNaN(age) || age < 0 || age > 120) {
+      errors.age = "Yosh noto'g'ri, 0 va 120 orasida bo'lishi kerak";
     }
     if (!emailPattern.test(userInput.email)) {
       errors.email = "Email formati noto'g'ri";
@@ -46,7 +50,8 @@ function SignUp() {
 
     setUserInput({
       name: "",
-      phone: "",
+      surname: "",
+      age: "",
       email: "",
       password: "",
     });
@@ -72,17 +77,30 @@ function SignUp() {
               {errors.name && <p className={style.error}>{errors.name}</p>}
             </div>
             <div className={style.passwordDiv}>
-              <p className={style.password}>Number</p>
+              <p className={style.password}>Surname</p>
               <input
-                value={userInput.phone}
+                value={userInput.surname}
                 onChange={(e) =>
-                  setUserInput((prev) => ({ ...prev, phone: e.target.value }))
+                  setUserInput((prev) => ({ ...prev, surname: e.target.value }))
                 }
                 className={style.passwordInp}
                 type="text"
-                placeholder="+998993932929"
+                placeholder="tursunov"
               />
-              {errors.phone && <p className={style.error}>{errors.phone}</p>}
+              {errors.username && <p className={style.error}>{errors.username}</p>}
+            </div>
+            <div className={style.passwordDiv}>
+              <p className={style.password}>Age</p>
+              <input
+                value={userInput.age}
+                onChange={(e) =>
+                  setUserInput((prev) => ({ ...prev, age: e.target.value }))
+                }
+                className={style.passwordInp}
+                type="number"
+                placeholder="25"
+              />
+              {errors.age && <p className={style.error}>{errors.age}</p>}
             </div>
             <div className={style.passwordDiv}>
               <p className={style.password}>Email</p>

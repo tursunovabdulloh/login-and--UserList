@@ -11,7 +11,7 @@ p{
 .form {
   display: flex;
   flex-direction: column;
-  gap: 45px;
+  gap: 25px;
 }
 .box {
   display: flex;
@@ -27,7 +27,7 @@ p{
   padding-top: 48px;
   padding-left: 96px;
   padding-right: 61px;
-  margin: 20px 0;
+  margin: 10px;
 }
 .passwordDiv {
   display: flex;
@@ -53,6 +53,7 @@ p{
 .passwordInp:focus {
   outline: 3px solid rgb(22, 173, 190);
 }
+
 .submitBtn {
   width: 500px;
   height: 50px;
@@ -63,7 +64,7 @@ p{
   color: #fff;
   border: 0;
   border-radius: 11px;
-  margin-bottom: 35px;
+  margin-top: 35px;
 }
 
 .submitBtn:hover {
@@ -82,6 +83,7 @@ p{
   margin-bottom: 59px;
   text-align: center;
   padding: 11.5px;
+  margin-top: 20px;
 
 }
 .a:hover{
